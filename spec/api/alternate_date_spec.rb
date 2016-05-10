@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::AlternateDate do
+describe SacsRuby::API::AlternateDate do
   it_behaves_like 'base api' do
     include_context 'post method'
 

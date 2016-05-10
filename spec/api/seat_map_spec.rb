@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::SeatMap do
+describe SacsRuby::API::SeatMap do
   it_behaves_like 'base api' do
     include_context 'post method'
 

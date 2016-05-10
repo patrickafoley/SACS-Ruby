@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::AircraftEquipmentLookup do
+describe SacsRuby::API::AircraftEquipmentLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

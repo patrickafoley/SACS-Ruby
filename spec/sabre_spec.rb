@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Sabre do
+describe SacsRuby do
   it 'has a version number' do
-    expect(Sabre::VERSION).not_to be nil
+    expect(SacsRuby::VERSION).not_to be nil
   end
 end

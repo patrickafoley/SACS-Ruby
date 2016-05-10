@@ -44,7 +44,7 @@ RSpec.shared_examples 'base api' do
 
     context 'with params and token' do
       it 'gets valid response' do
-        allow(Sabre.client).to receive(http_method)
+        allow(SacsRuby.client).to receive(http_method)
           .with(request_params)
           .and_return(payload)
 
@@ -57,7 +57,7 @@ RSpec.shared_examples 'base api' do
       it 'gets valid response' do
         opts.delete(:token)
         request_params.delete(:token)
-        allow(Sabre.client).to receive(http_method)
+        allow(SacsRuby.client).to receive(http_method)
           .with(request_params)
           .and_return(payload)
 
@@ -71,7 +71,7 @@ RSpec.shared_examples 'base api' do
     subject { described_class.new(opts) }
 
     it 'gets valid response' do
-      allow(Sabre.client).to receive(http_method)
+      allow(SacsRuby.client).to receive(http_method)
         .with(request_params)
         .and_return(payload)
 
@@ -86,7 +86,7 @@ RSpec.shared_examples 'base api' do
     subject { described_class.get(opts) }
 
     it 'returns parsed json' do
-      allow(Sabre.client).to receive(http_method)
+      allow(SacsRuby.client).to receive(http_method)
         .with(request_params)
         .and_return(payload)
 
@@ -105,7 +105,7 @@ RSpec.shared_context 'validate options' do
 
       it 'raises validate error' do
         expect { subject }
-          .to raise_error(Sabre::ApiArgumentError)
+          .to raise_error(SacsRuby::ApiArgumentError)
       end
     end
   end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::GeoAutocomplete do
+describe SacsRuby::API::GeoAutocomplete do
   it_behaves_like 'base api' do
     include_context 'validate options'
 

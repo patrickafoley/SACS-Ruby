@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::Base do
+describe SacsRuby::Base do
   it_behaves_like 'base api' do
     include_context 'validate options'
 

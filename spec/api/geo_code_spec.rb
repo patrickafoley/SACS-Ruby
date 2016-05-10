@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::GeoCode do
+describe SacsRuby::API::GeoCode do
   it_behaves_like 'base api' do
     include_context 'post method'
 

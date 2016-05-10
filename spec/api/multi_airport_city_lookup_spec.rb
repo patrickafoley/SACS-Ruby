@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::MultiAirportCityLookup do
+describe SacsRuby::API::MultiAirportCityLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

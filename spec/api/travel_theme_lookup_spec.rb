@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::TravelThemeLookup do
+describe SacsRuby::API::TravelThemeLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

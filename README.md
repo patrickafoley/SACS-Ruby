@@ -7,10 +7,10 @@ This library implements [Sabre REST API](https://developer.sabre.com/docs/read/R
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sabre'
+gem 'sacs_ruby'
 ```
 
-If you are not using JRuby please consider using [Oj gem](https://github.com/ohler55/oj) for JSON serialization.s
+If you are not using JRuby please consider using [Oj gem](https://github.com/ohler55/oj) for JSON serialization.
 To install Oj add this line to your Gemfile:
 
 ```ruby
@@ -23,16 +23,16 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sabre
+    $ gem install sacs_ruby
 
 ## Configuration
 
 To get API keys please register on [developer.sabre.com](https://developer.sabre.com/member/register)
 
-Initialize gem with configuration file. If using Rails add it to `config/initializers/sabre.rb`
+Initialize gem with configuration file. If using Rails add it to `config/initializers/sacs_ruby.rb`
 
 ```ruby
-Sabre.configure do |config|
+SacsRuby.configure do |config|
   config.user_id = '' # User ID
   config.group = '' # Group
   config.domain = 'EXT' # Domain
@@ -61,17 +61,17 @@ config.token_strategy = :shared
 
 To request token use:
 ```ruby
-token = Sabre.client.fetch_token
+token = SacsRuby.client.fetch_token
 token.access_token
 token.expires_on
 ```
 Please store it and implement token refresh in to your workflow.
 
-Expired token will raise `Sabre::AuthorizationError`.
+Expired token will raise `SacsRuby::AuthorizationError`.
 
 To use shared token add it as argument, ie:
 ```ruby
-results = Sabre::API::BargainFinderMax.get(payload: payload, token: received_access_token)
+results = SacsRuby::API::BargainFinderMax.get(payload: payload, token: received_access_token)
 ```
 
 ### Environment
@@ -89,19 +89,19 @@ For detailed documentation regarding required params and possible response, plea
 
 Each API endpoint listed in documentation can be requested following this pattern:
 ```ruby
-Sabre::API::NameOfTheApi.get(*args)
+SacsRuby::API::NameOfTheApi.get(*args)
 ```
 
 Example:
 
 ```ruby
-results = Sabre::API::InstaFlightsSearch.get(origin: 'LAX', destination: 'JFK', departuredate: '2015-12-01', returndate: '2015-12-06') # add `token: token_string` if needed
+results = SacsRuby::API::InstaFlightsSearch.get(origin: 'LAX', destination: 'JFK', departuredate: '2015-12-01', returndate: '2015-12-06') # add `token: token_string` if needed
 ```
 
 or:
 
 ```ruby
-ifs = Sabre::API::InstaFlightsSearch.new(origin: 'LAX', destination: 'JFK', departuredate: '2015-12-04', returndate: '2015-12-06')
+ifs = SacsRuby::API::InstaFlightsSearch.new(origin: 'LAX', destination: 'JFK', departuredate: '2015-12-04', returndate: '2015-12-06')
 
 ifs.opts # => {:origin=>"LAX", :destination=>"JFK", :departuredate=>"2015-12-04", :returndate=>"2015-12-06"}
 
@@ -110,10 +110,10 @@ ifs.get # gets data from api
 ifs.results # prints response hash
 ```
 
-If required params are missed during endpoint initialization `Sabre::ApiArgumentError` will be raised.
+If required params are missed during endpoint initialization `SacsRuby::ApiArgumentError` will be raised.
 
 Sometimes additional argument requires another argument to be present.
-If it is missing, `Sabre::BadRequestError` will be raised with error description provided by the API.
+If it is missing, `SacsRuby::BadRequestError` will be raised with error description provided by the API.
 
 
 ### Advanced usage
@@ -182,7 +182,7 @@ class BargainFinderMax
 end
 
 payload = BargainFinderMax.build_json(params)
-results = Sabre::API::BargainFinderMax.get(payload: payload)
+results = SacsRuby::API::BargainFinderMax.get(payload: payload)
 ```
 Pay attention to the format of required arguments.
 

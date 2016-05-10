@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::Client do
+describe SacsRuby::Client do
   let(:token_headers) do
     { 'Content-Type' => 'application/x-www-form-urlencoded' }
   end
@@ -136,7 +136,7 @@ describe Sabre::Client do
 
         it 'raises BadRequestError' do
           expect { subject.get(params) }
-            .to raise_error(Sabre::BadRequestError, /today or a future date/)
+            .to raise_error(SacsRuby::BadRequestError, /today or a future date/)
         end
       end
 
@@ -159,7 +159,7 @@ describe Sabre::Client do
 
         it 'raises AuthorizationError' do
           expect { subject.get(params) }
-            .to raise_error(Sabre::AuthorizationError, /invalid credentials/)
+            .to raise_error(SacsRuby::AuthorizationError, /invalid credentials/)
         end
       end
 
@@ -172,7 +172,7 @@ describe Sabre::Client do
 
         it 'raises ClientRequestError' do
           expect { subject.get(params) }
-            .to raise_error(Sabre::ClientRequestError)
+            .to raise_error(SacsRuby::ClientRequestError)
         end
       end
 
@@ -196,7 +196,7 @@ describe Sabre::Client do
 
           it 'raises NotFoundError' do
             expect { subject.get(params) }
-              .to raise_error(Sabre::NotFoundError, /No results were found/)
+              .to raise_error(SacsRuby::NotFoundError, /No results were found/)
           end
         end
 
@@ -205,7 +205,7 @@ describe Sabre::Client do
 
           it 'raises NotFoundError' do
             expect { subject.get(params) }
-              .to raise_error(Sabre::NotFoundError, /404 Not Found/)
+              .to raise_error(SacsRuby::NotFoundError, /404 Not Found/)
           end
         end
       end
@@ -229,7 +229,7 @@ describe Sabre::Client do
 
         it 'raises TooManyRequestsError' do
           expect { subject.get(params) }
-            .to raise_error(Sabre::TooManyRequestsError, /count is exceeded/)
+            .to raise_error(SacsRuby::TooManyRequestsError, /count is exceeded/)
         end
       end
     end
@@ -320,7 +320,7 @@ describe Sabre::Client do
 
         it 'raises TokenRequestError' do
           expect { subject.request_token(auth_key) }
-            .to raise_error(Sabre::TokenRequestError, /Credentials are missing/)
+            .to raise_error(SacsRuby::TokenRequestError, /Credentials are missing/)
         end
       end
     end

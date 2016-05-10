@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::TopDestinations do
+describe SacsRuby::API::TopDestinations do
   it_behaves_like 'base api' do
     let(:opts) do
       {

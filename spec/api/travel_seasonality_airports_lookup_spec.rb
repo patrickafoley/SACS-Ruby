@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::TravelSeasonalityAirportsLookup do
+describe SacsRuby::API::TravelSeasonalityAirportsLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

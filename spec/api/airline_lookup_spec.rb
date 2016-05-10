@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::AirlineLookup do
+describe SacsRuby::API::AirlineLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::PointOfSaleCountryCodeLookup do
+describe SacsRuby::API::PointOfSaleCountryCodeLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

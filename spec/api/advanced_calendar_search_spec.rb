@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::AdvancedCalendarSearch do
+describe SacsRuby::API::AdvancedCalendarSearch do
   it_behaves_like 'base api' do
     include_context 'post method'
 

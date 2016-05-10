@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::AlternateAirportShop do
+describe SacsRuby::API::AlternateAirportShop do
   it_behaves_like 'base api' do
     include_context 'post method'
 

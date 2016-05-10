@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::CountriesLookup do
+describe SacsRuby::API::CountriesLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

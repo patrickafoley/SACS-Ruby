@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::CityPairsLookup do
+describe SacsRuby::API::CityPairsLookup do
   it_behaves_like 'base api' do
     let(:opts) do
       {

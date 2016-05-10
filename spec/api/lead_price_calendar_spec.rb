@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Sabre::API::LeadPriceCalendar do
+describe SacsRuby::API::LeadPriceCalendar do
   it_behaves_like 'base api' do
     include_context 'validate options'
 
