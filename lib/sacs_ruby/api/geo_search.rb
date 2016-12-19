@@ -5,7 +5,7 @@ module SacsRuby
       include BasePost
 
       def endpoint_url
-        '/v1/lists/utilities/geosearch/locations'
+        '/v1.0.0/lists/utilities/geosearch/locations?mode=geosearch'
       end
     end
   end
