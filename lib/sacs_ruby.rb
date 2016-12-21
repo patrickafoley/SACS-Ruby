@@ -40,6 +40,7 @@ module SacsRuby
     autoload :GeoCode, 'sacs_ruby/api/geo_code'
     autoload :GeoSearch, 'sacs_ruby/api/geo_search'
     autoload :GetHotelDescriptiveInfo, 'sacs_ruby/api/get_hotel_descriptive_info'
+    autoload :GetHotelMedia, 'sacs_ruby/api/get_hotel_media'
 
   end
 
